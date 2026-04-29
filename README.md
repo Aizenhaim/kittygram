@@ -16,12 +16,6 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
-Если будет ошибка выполнения скриптов, выполните один раз:
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
 Обновить pip и установить зависимости:
 
 ```powershell
