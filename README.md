@@ -35,6 +35,17 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
+Создать суперпользователя для админки:
+
+```powershell
+python manage.py createsuperuser
+```
+
+Введите:
+- Username: `admin`
+- Email: `admin@example.com`
+- Password: `admin123`
+
 Запустить проект:
 
 ```powershell
@@ -42,6 +53,31 @@ python manage.py runserver
 ```
 
 Сервер запустится на `http://localhost:8000`
+
+#### Доступ к приложению
+
+**Админка (для тестирования):**
+```
+http://localhost:8000/admin/
+Логин: admin
+Пароль: admin123
+```
+
+**API документация (Swagger):**
+```
+http://localhost:8000/swagger/
+(доступна после входа в админку)
+```
+
+**API документация (ReDoc):**
+```
+http://localhost:8000/redoc/
+```
+
+**API основной эндпоинт:**
+```
+http://localhost:8000/api/
+```
 
 ---
 
