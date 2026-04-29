@@ -127,6 +127,22 @@ docker-compose down
 docker-compose down -v
 ```
 
+### Управление образами (Images)
+
+```powershell
+# Просмотр всех образов
+docker images
+
+# Удалить образ проекта
+docker rmi kittygram-web
+
+# Удалить все неиспользуемые образы
+docker image prune
+
+# Удалить образ принудительно
+docker rmi -f kittygram-web
+```
+
 ### Другие полезные команды
 
 ```powershell
@@ -142,6 +158,6 @@ docker-compose exec web python manage.py createsuperuser
 # Просмотр списка контейнеров
 docker ps
 
-# Просмотр всех images
-docker images
+# Удалить все контейнеры, сети и volumes
+docker system prune -a --volumes
 ```
