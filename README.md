@@ -84,5 +84,61 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python3 manage.py migrate
+python3 manage.py createsuperuser
 python3 manage.py runserver
+```
+
+---
+
+## Запуск через Docker
+
+### Требования
+- Docker установлен: `docker --version`
+- Docker Compose установлен: `docker-compose --version`
+
+### Запуск контейнеров
+
+```powershell
+# Запустить контейнеры в фоне
+docker-compose up -d
+
+# Просмотр логов
+docker-compose logs -f web
+
+# Проверить статус контейнеров
+docker-compose ps
+```
+
+Приложение будет доступно на `http://localhost:8000`
+
+### Остановка контейнеров
+
+```powershell
+# Остановить контейнеры (данные сохранятся)
+docker-compose stop
+
+# Остановить и удалить контейнеры
+docker-compose down
+
+# Полная очистка (удалить контейнеры, volumes, images)
+docker-compose down -v
+```
+
+### Другие полезные команды
+
+```powershell
+# Пересоздать контейнеры (если изменился код)
+docker-compose up -d --build
+
+# Выполнить команду в контейнере
+docker-compose exec web python manage.py migrate
+
+# Создать суперпользователя в контейнере
+docker-compose exec web python manage.py createsuperuser
+
+# Просмотр списка контейнеров
+docker ps
+
+# Просмотр всех images
+docker images
 ```
